@@ -1,0 +1,70 @@
+---
+title: "Model Development to Predict Heart Disease"
+author: "Mileati Melese"
+date: "`r Sys.Date()`"
+output: html_document
+params:
+  production: TRUE
+---
+
+
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+```{r, load-data}
+here::i_am("reports/final_report.Rmd")
+heart_data <- readRDS(
+  file = here::here("output/clean_recategorized_data.rds")
+)
+```
+
+## Introduction
+
+Heart disease is one of the leading causes of death in the world. The data set for this study was obtained from [Kaggle](https://www.kaggle.com/code/tentotheminus9/what-causes-heart-disease-explaining-the-model/notebook). However, the primary goal of this report is not to develop a robust model to predict heart disease. The goal of this project is to create a report that is  easily reproducible utilizing the tools learned in the class and demonstrate mastery of the contents. Therefore, these results are not to be taken seriously in the context of heart disease research. 
+
+## Methods
+
+First, a summary table was generate to look at the frequency and mean values for the predictors stratified by heart disease status. Then we develop a logistic regression model containing six variables and assessed which of the predictors were significant. Then, we compared two logistic regression models one containing all the six predictors, other containing only five of the predictors removing the predictor that was found to have an p value greater than 0.05. Then, the Receiver-operating characteristics curve (ROC) and the Area Under the Curve (AUC) were calculated to compare the performance of the two models.
+
+
+## Results 
+
+### Descriptive Analysis
+
+The total number of observation in this study is `r nrow(heart_data)`.  Majority of the subjects are female and had typical angina chest pain type. By percent, Among those who have heart disease only 13.9 % had excercise induce angina.
+
+```{r, table1}
+readRDS(
+  file = here::here("output/summary_table.rds")
+)
+```
+
+### Model Analysis,Tabular 
+
+This table shows the odds ratio for each predictor along with the 95 % confidence interval. The p_value for age is 0.11 therefore it was removed from the second model.
+
+```{r, fit-primary-model}
+readRDS(file = here::here("output/glm_heart_disease_table.rds")
+)
+```
+
+
+### Comparing Different models 
+The full model contains all predictors. The without age model excludes age from the predictor variables. As it is shown by the ROC and AUC, there is no significant difference between the models. The AUC for both models is o.88. Therefore, the model without age is the better model because if a model with less predictors achieves as good performance as the one with more, then the model that contains less predictors is better. 
+
+```{r, plot-data}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics(
+  here::here("output/roc_curve.png")
+)
+```
+
+## Conclusion
+
+A model that contains age, chest pain type indicator, exercise induced angina indicator, resting blood pressure, and maximum heart rate achieved has an overall great performance. 
+
