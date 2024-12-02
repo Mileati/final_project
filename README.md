@@ -51,10 +51,35 @@ The goal is to demonstrate data analysis and modeling techniques while ensuring 
 
 Prerequisites:
 R and RStudio installed.
-Required R packages:
 
-Clone the repository
-Install the necessary packages in R
-Run the Makefile to generate the report 
+forking and cloning
+
+Go to my github and the specific repo called final_project under the link provided below
+https://github.com/Mileati/final_project
+
+you can fork this repository into your github
+
+Then open your r in rstudio
+
+On the terminal type:  
+git clone https://github.com/YOUR_USERNAME/REPOSITORY_NAME.git
+
+This will download your github repository into your local computer
+
+Make sure your terminal is on the project root directory then type make to get the final report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
