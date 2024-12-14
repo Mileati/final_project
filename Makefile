@@ -18,5 +18,5 @@ output/roc_curve.png: scripts/figure_creation.R output/clean_recategorized_data.
 
 .PHONY:	clean
 clean:
-	rm -f output/* && rm -f report/*.html
+	rm -f output/* && rm -f report/*.html && rm -f *.html
 	
