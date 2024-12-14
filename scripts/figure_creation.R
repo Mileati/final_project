@@ -1,5 +1,5 @@
 library(pROC)
-
+library(dplyr)
 here::i_am("scripts/figure_creation.R")
 
 recategorized_heart_data <- readRDS(
@@ -34,22 +34,19 @@ roc_full <- roc(heart_data_target_num$target, pred_full, quiet = TRUE)
 roc_without_age <- roc(heart_data_target_num$target, pred_without_age, quiet = TRUE)
 
 # Plot the ROC curves
+png("output/roc_curve.png", width = 800, height = 600)  # Open PNG device
 plot(roc_full, col = "blue", lwd = 2, main = "ROC Curves for Logistic Regression Models to Predict Heart Disease")
 lines(roc_without_age, col = "red", lwd = 2)
-legend("bottomright", legend = c("Full Model", "Without Age"), 
-       col = c("blue", "red"), lwd = 2)
+
+# Add legends to the plot
+legend("bottomright", legend = c("Full Model", "Without Age"), col = c("blue", "red"), lwd = 2)
 legend("bottomright", 
        legend = c(paste("Full Model AUC =", round(auc_full, 2)), 
-                  paste("Without Age AUC =", round(auc_without_age, 2))),
+                  paste("Without Age AUC =", round(auc_without_age, 2))), 
        col = c("blue", "red"), lwd = 2)
-
-roc_curve <- recordPlot()
-
-png("output/roc_curve.png", width = 800, height = 600)
-
-replayPlot(roc_curve)
 
 # Close the device to save the plot
 dev.off()
+
 
 

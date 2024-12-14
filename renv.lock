@@ -196,7 +196,7 @@
     },
     "cards": {
       "Package": "cards",
-      "Version": "0.2.2",
+      "Version": "0.4.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -208,7 +208,7 @@
         "tidyr",
         "tidyselect"
       ],
-      "Hash": "b1aff1f353f1f384dfc1fb4dd78d903c"
+      "Hash": "2cd0d1966092de416f9b7fa1e88b6132"
     },
     "class": {
       "Package": "class",
@@ -449,14 +449,14 @@
     },
     "glue": {
       "Package": "glue",
-      "Version": "1.7.0",
+      "Version": "1.8.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "methods"
       ],
-      "Hash": "e0b3a53876554bd45879e596cdb10a52"
+      "Hash": "5899f1eaa825580172bb56c08266f37c"
     },
     "gmodels": {
       "Package": "gmodels",
@@ -472,7 +472,7 @@
     },
     "gt": {
       "Package": "gt",
-      "Version": "0.11.0",
+      "Version": "0.11.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -498,7 +498,7 @@
         "vctrs",
         "xml2"
       ],
-      "Hash": "3470c2eb1123db6a2c54ec812de38284"
+      "Hash": "3170d1f0f45e531c241179ab57cd30bd"
     },
     "gtools": {
       "Package": "gtools",
@@ -514,7 +514,7 @@
     },
     "gtsummary": {
       "Package": "gtsummary",
-      "Version": "2.0.2",
+      "Version": "2.0.4",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -529,7 +529,7 @@
         "tidyr",
         "vctrs"
       ],
-      "Hash": "4f9f5a43b87926c5969d50780b282e8f"
+      "Hash": "a6cb3a1251d2a86c14ccc3e9977437dc"
     },
     "haven": {
       "Package": "haven",

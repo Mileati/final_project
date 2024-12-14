@@ -1,4 +1,4 @@
-reports/*.html
+report/*.html
 .Rproj.user
 output/ *.rds
 output/ *.png

@@ -1,6 +1,6 @@
 here::i_am("scripts/table_creation.R")
 heart_data <- read.csv(here::here("data/heart.csv"))
-
+library(here)
 library(dplyr)
 library(tableone)
 library(kableExtra)

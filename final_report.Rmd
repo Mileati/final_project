@@ -16,7 +16,7 @@ opts_chunk$set(
 ```
 
 ```{r, load-data}
-here::i_am("reports/final_report.Rmd")
+here::i_am("final_report.Rmd")
 heart_data <- readRDS(
   file = here::here("output/clean_recategorized_data.rds")
 )
@@ -24,7 +24,7 @@ heart_data <- readRDS(
 
 ## Introduction
 
-Heart disease is one of the leading causes of death in the world. The data set for this study was obtained from [Kaggle](https://www.kaggle.com/code/tentotheminus9/what-causes-heart-disease-explaining-the-model/notebook). However, the primary goal of this report is not to develop a robust model to predict heart disease. The goal of this project is to create a report that is  easily reproducible utilizing the tools learned in the class and demonstrate mastery of the contents. Therefore, these results are not to be taken seriously in the context of heart disease research. 
+Heart disease is one of the leading causes of death in the world. The data set for this study was obtained from kaggle. However, the primary goal of this report is not to develop a robust model to predict heart disease. The goal of this project is to create a report that is  easily reproducible utilizing the tools learned in the class and demonstrate mastery of the contents. Therefore, these results are not to be taken seriously in the context of heart disease research. 
 
 ## Methods
 
@@ -43,7 +43,7 @@ readRDS(
 )
 ```
 
-### Model Analysis,Tabular 
+### Model Analysis
 
 This table shows the odds ratio for each predictor along with the 95 % confidence interval. The p_value for age is 0.11 therefore it was removed from the second model.
 
